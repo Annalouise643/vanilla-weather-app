@@ -9,11 +9,155 @@
 </head>
 <body>
     <div class="container">
-        <h1>
-        Hello World
-        </h1>
-        <a href="" class="btn btn-primary"> Click me</a>
+        <div class="card mt-5">
+            <div class="card-body">
+              <form id="city-search-form">
+                
+                <div class="row">
+                  <div class="col-8 pl-2">
+                   <input type="text" placeholder="Enter a city" autofocus class="ml-1 w-100" id="city-search-text-input"/>
+                   </div>
+                 
+                   <div class="col-2">
+                   <input type="submit" value="Search" class="btn btn-secondary py-1 px-3" />
+                   </div>
+     
+                   <div class="col-2">
+                   <button type="button" class="btn btn-secondary py-1 px-3" id="current-location-button" >Current</button>
+                   </div>
+                </div>
+
+                <br />
+
+                <div class="row">
+                  <div class="col-4 mx-2 px-4">
+                    <div class="row city" id="city">
+                      <strong>
+                      London
+                      </strong>
+                    </div>
+                    <div class="row date" id="date">
+                    Sunday 17:25
+                    </div>
+                    <div class="row weather-summary" id="weather-summary">
+                        Scattered showers
+                    </div>
+                  </div>
+                  <div class="col mx-2 pt-3 pl-0 weather-tip">
+                    Don't forget your umbrella! <i class="fas fa-weather-tip"></i>
+                  </div>
+                </div>
+
+                <br />
+
+                <div class="row">
+                  <div class="col-4 px-4 pt-2 mx-2 today border rounded">
+                    <div class="today-icon">                     
+                    <i class="fas fa-cloud-rain"></i>
+                  <span class="temperatureAndUnits">  
+                    <span class="temperature" id="temperature">4</span>
+                    <a href="#" class="units" id="celsius-link">°C</a> 
+                    <span class="units">|</span>
+                    <a href="#" class="units" id="farenheit-link">°F</a>
+                    </span>
+                  </span>
+                  </div>
+                  </div>       
+                  
+                  <div class="col px-4 pt-2 mx-2 today border rounded">
+                    <div class="row">
+                    <i class="fas fa-sun sunrise-sunset"></i> Sunrise 07:20
+                    </div>
+                    <br />
+                    <div class="row">
+                    <i class="fas fa-cloud-moon sunrise-sunset"></i> Sunset 16:10
+                    </div>
+                  </div>          
+                  
+                  <div class="col px-4 pt-1 mx-2 today border rounded">
+                    <div class="row">
+                    High:12°C
+                    </div>
+                    <div class="row">
+                    Low: 8°
+                    </div>
+                    <div class="row">
+                    Wind: <span id="wind">7</span>km/h
+                    </div>
+                    <div class="row">
+                    Precipitation: 40%
+                    </div>
+                  </div>                      
+                </div>
+
+                <br />  
+
+                <div class="row">
+                  <div class="col px-4 ml-2 mr-3 weather-forecast border rounded">
+                    <div class="row">
+                      Monday         
+                    </div>
+                    <div class="row forecast-icon">
+                    <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="row">
+                      12°C | 11°C            
+                    </div>
+                  </div>
+      
+                  <div class="col px-4 mx-3 weather-forecast border rounded">
+                    <div class="row">
+                        Tuesday            
+                    </div>
+                    <div class="row forecast-icon">
+                    <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="row">
+                      14°C | 11°C            
+                    </div>
+                  </div>
+      
+                  <div class="col px-4 mx-3 weather-forecast border rounded">
+                    <div class="row">
+                        Wednesday            
+                    </div>
+                    <div class="row forecast-icon">
+                    <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <div class="row">
+                      15°C | 8°C            
+                    </div>
+                  </div>
+      
+                  <div class="col px-4 mx-3 weather-forecast border rounded">
+                    <div class="row">
+                        Thursday            
+                    </div>
+                    <div class="row forecast-icon">
+                    <i class="fas fa-cloud-sun-rain"></i>
+                    </div>
+                    <div class="row">
+                      11°C | 5°C            
+                    </div>
+                  </div>
+      
+                  <div class="col px-4 ml-3 mr-2 weather-forecast border rounded">
+                    <div class="row">
+                        Friday
+                    </div>
+                    <div class="row forecast-icon">
+                    <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <div class="row">
+                      8°C | 5°C
+                    </div>
+                  </div>
+                </div>  
+              </form>
+              <a href="https://github.com/Annalouise643/weather-app">Open-source code</a> by Anna Bray
+            </div>
+        </div>
     </div>
-    <script src="src/app.js"></script>
+  <script src="src/app.js"></script>
 </body>
 </html>
