@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>Weather App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/acfac4cf48.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
 </head>
 <body>
     <div class="container">
+      <div class="weather-app">
         <div class="card mt-5">
             <div class="card-body">
               <form id="city-search-form">
@@ -37,34 +43,39 @@
                       </strong>
                     </div>
                     <div class="row date" id="date">
-                    Sunday 17:25
+                      <strong>
+                        Sunday 17:25
+                      </strong>
                     </div>
                     <div class="row weather-summary" id="weather-summary">
+                      <strong>
                         Scattered showers
+                      </strong>  
                     </div>
                   </div>
                   <div class="col mx-2 pt-3 pl-0 weather-tip">
-                    Don't forget your umbrella! <i class="fas fa-weather-tip"></i>
+                    <strong>
+                      Don't forget your umbrella! <i class="fas fa-weather-tip"></i>
+                    </strong>
                   </div>
                 </div>
 
                 <br />
 
                 <div class="row">
-                  <div class="col-4 px-4 pt-2 mx-2 today border rounded">
-                    <div class="today-icon">                     
+                  <div class="col-4 px-4 pt-2 mx-2 todays-weather border rounded">
+                    <span class="today-icon">                     
                     <i class="fas fa-cloud-rain"></i>
-                  <span class="temperatureAndUnits">  
-                    <span class="temperature" id="temperature">4</span>
-                    <a href="#" class="units" id="celsius-link">°C</a> 
-                    <span class="units">|</span>
-                    <a href="#" class="units" id="farenheit-link">°F</a>
                     </span>
-                  </span>
-                  </div>
+                    <span class="temperature-and-units">  
+                      <span class="temperature" id="temperature">4</span>
+                      <a href="#" class="units" id="celsius-link">°C</a> 
+                      <span class="units">|</span>
+                      <a href="#" class="units" id="farenheit-link">°F</a>
+                    </span>
                   </div>       
                   
-                  <div class="col px-4 pt-2 mx-2 today border rounded">
+                  <div class="col px-4 pt-2 mx-2 todays-weather border rounded">
                     <div class="row">
                     <i class="fas fa-sun sunrise-sunset"></i> Sunrise 07:20
                     </div>
@@ -74,15 +85,15 @@
                     </div>
                   </div>          
                   
-                  <div class="col px-4 pt-1 mx-2 today border rounded">
+                  <div class="col px-4 pt-1 mx-2 todays-weather border rounded">
                     <div class="row">
-                    High:12°C
+                    High: 12°C
                     </div>
                     <div class="row">
                     Low: 8°
                     </div>
                     <div class="row">
-                    Wind: <span id="wind">7</span>km/h
+                    <span>Wind: <span id="wind">7</span> km/h</span>
                     </div>
                     <div class="row">
                     Precipitation: 40%
@@ -154,9 +165,10 @@
                   </div>
                 </div>  
               </form>
-              <a href="https://github.com/Annalouise643/weather-app">Open-source code</a> by Anna Bray
             </div>
         </div>
+        <a href="https://github.com/Annalouise643/weather-app">Open-source code</a> by Anna Bray
+      </div>
     </div>
   <script src="src/app.js"></script>
 </body>

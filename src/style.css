@@ -1,0 +1,56 @@
+.weather-app {
+  max-width: 700px;
+  margin: 0 auto;
+}
+body {
+  color: rgb(33, 33, 33);
+  font-family: Baskerville, serif;
+}
+.card-body {
+  background-color: rgba(0, 150, 136, 0.4);
+}
+.city {
+  font-size: xx-large;
+}
+.date {
+  font-size:large;
+}
+.weather-summary {
+  font-size: large;
+}
+.weather-tip {
+font-size: large;
+}
+.todays-weather {
+  color: white;
+  background-color: rgb(85, 148, 161);
+}
+.today-icon {
+  font-size: 40px;
+}
+.temperature-and-units {
+  position: relative;
+  left: 20px;
+}
+.temperature {
+  font-size: 50px;
+}
+.units {
+  color:white;
+  font-size: 15px;
+  position: relative;
+  bottom: 24px;
+}
+.sunrise-sunset {
+  padding-right: 5px;
+  position: relative;
+  top: 2px;
+}
+.weather-forecast {
+  color: white;
+  background-color: rgb(70, 124, 135);
+}
+.forecast-icon {
+  font-size: large;
+  padding: 5px 0px;
+}
