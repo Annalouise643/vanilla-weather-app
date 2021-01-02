@@ -17,6 +17,7 @@ body {
 }
 .weather-summary {
   font-size: large;
+  text-transform: capitalize;
 }
 .weather-tip {
 font-size: large;
