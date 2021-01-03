@@ -32,7 +32,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let city = "New York";
+let city = "Sydney";
 let apiKey = "119a26e51a72faab5ad07c6426bd0fdd";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
