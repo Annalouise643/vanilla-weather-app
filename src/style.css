@@ -36,10 +36,18 @@ font-size: large;
   font-size: 50px;
 }
 .units {
-  color:white;
+  color: white;
   font-size: 15px;
   position: relative;
   bottom: 24px;
+}
+.active {
+  color: white;
+  cursor:default;
+}
+.active:hover {
+  text-decoration: none;
+  color: white; 
 }
 .sunrise-sunset {
   padding-right: 5px;
