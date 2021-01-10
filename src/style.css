@@ -36,7 +36,7 @@ font-size: large;
   font-size: 50px;
 }
 .units {
-  color: white;
+  color: white; 
   font-size: 15px;
   position: relative;
   bottom: 24px;
@@ -58,7 +58,6 @@ font-size: large;
   color: white;
   background-color: rgb(70, 124, 135);
 }
-.forecast-icon {
-  font-size: large;
-  padding: 5px 0px;
+.forecast-image {
+  width: 100%;
 }
