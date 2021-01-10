@@ -42,110 +42,27 @@ function formatHours(timestamp) {
 
 function displayForecast(response) {
 let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = null;
 let forecast = response.data.list[0];
-console.log(forecast);
-forecastElement.innerHTML = `
-<div class="col px-4 mx-2 weather-forecast border rounded">
-  <div class="row">
-    ${formatHours(forecast.dt * 1000)}        
-  </div>
+for (let index = 0; index < 6; index++) {
+  forecast = response.data.list[index];
+  forecastElement.innerHTML += `
+  <div class="col px-4 mx-2 weather-forecast border rounded">
+    <div class="row">
+      ${formatHours(forecast.dt * 1000)}        
+    </div>
+    
+      <img class="forecast-image"
+        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+        alt = ""
+      />
   
-    <img class="forecast-image"
-      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-      alt = ""
-    />
-
-  <div class="row">
-    ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C            
+    <div class="row">
+      ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C            
+    </div>
   </div>
-</div>
-  `;
-
-forecast = response.data.list[1];
-forecastElement.innerHTML += `
-<div class="col px-4 mx-2 weather-forecast border rounded">
-  <div class="row">
-    ${formatHours(forecast.dt * 1000)}        
-  </div>
-  
-    <img class="forecast-image" 
-      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-      alt = ""
-    />
-
-  <div class="row">
-    ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C            
-  </div>
-</div>
-`
-forecast = response.data.list[2];
-forecastElement.innerHTML += `
-<div class="col px-4 mx-2 weather-forecast border rounded">
-  <div class="row">
-    ${formatHours(forecast.dt * 1000)}        
-  </div>
-  
-    <img class="forecast-image"
-      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-      alt = ""
-    />
- 
-  <div class="row">
-    ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C            
-  </div>
-</div>
-`
-forecast = response.data.list[3];
-forecastElement.innerHTML += `
-<div class="col px-4 mx-2 weather-forecast border rounded">
-  <div class="row">
-    ${formatHours(forecast.dt * 1000)}        
-  </div>
-  
-    <img class="forecast-image"
-      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-      alt = ""
-    />
-
-  <div class="row">
-    ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C            
-  </div>
-</div>
-`
-forecast = response.data.list[4];
-forecastElement.innerHTML += `
-<div class="col px-4 mx-2 weather-forecast border rounded">
-  <div class="row">
-    ${formatHours(forecast.dt * 1000)}        
-  </div>
-  
-    <img class="forecast-image"
-      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-      alt = ""
-    />
-
-  <div class="row">
-    ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C            
-  </div>
-</div>
-`
-forecast = response.data.list[5];
-forecastElement.innerHTML += `
-<div class="col px-4 mx-2 weather-forecast border rounded">
-  <div class="row">
-    ${formatHours(forecast.dt * 1000)}        
-  </div>
-  
-    <img class="forecast-image"
-      src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-      alt = ""
-    />
-
-  <div class="row">
-    ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C            
-  </div>
-</div>
-`
+    `;
+}
 }
 
 function search(city) {
