@@ -9,17 +9,28 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let weatherSummaryElement = document.querySelector("#weather-summary");
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
+  let highElement = document.querySelector("#high");
+  let lowElement = document.querySelector("#low");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
   let weatherCode = response.data.weather[0].icon;
 
+  let sunrise = response.data.sys.sunrise;
+  let sunset = response.data.sys.sunset;
+
   celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   weatherSummaryElement.innerHTML = response.data.weather[0].description;
+  sunriseElement.innerHTML = `${formatHours(sunrise * 1000)}`;  
+  sunsetElement.innerHTML = `${formatHours(sunset * 1000)}`; 
+  highElement.innerHTML = Math.round(response.data.main.temp_max);
+  lowElement.innerHTML = Math.round(response.data.main.temp_min);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
