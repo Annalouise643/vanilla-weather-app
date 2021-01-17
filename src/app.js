@@ -1,3 +1,4 @@
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -117,3 +118,29 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+function currentLocationShowTemperature(response) {
+  let city = response.data.name;
+  let temperature = Math.round(response.data.main.temp);
+  let cityElement = document.querySelector("#city");
+  let temperatureElement = document.querySelector("#temperature");
+  cityElement.innerHTML = `${city}`;
+  temperatureElement.innerHTML = `${temperature}`;
+}
+
+function getPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "119a26e51a72faab5ad07c6426bd0fdd";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  
+  axios.get(`${apiUrl}`).then(currentLocationShowTemperature);
+}
+
+function findCurrentLocation() {
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", findCurrentLocation);
